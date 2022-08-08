@@ -4,6 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build completed'
+        retry(count: 3)
+        sh 'wwwwwwwww'
       }
     }
 
@@ -31,7 +33,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'New build completed succesfully'
       }
