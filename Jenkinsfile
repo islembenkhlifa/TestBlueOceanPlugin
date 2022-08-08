@@ -4,8 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build completed'
-        retry(count: 3)
-        sh 'wwwwwwwww'
+        retry(count: 3) {
+          sh 'wwwwwwwww'
+        }
+
       }
     }
 
@@ -30,12 +32,6 @@ pipeline {
       steps {
         input(message: 'Are you sure to deploy?', ok: 'yes i am sure')
         echo 'Deployment completed'
-      }
-    }
-
-    stage('error') {
-      steps {
-        echo 'New build completed succesfully'
       }
     }
 
